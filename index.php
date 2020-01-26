@@ -7,42 +7,43 @@
                 <div class="row">
                     <div class="col-xl-6">
                         <div class="about-main-contant">
-                            <h1>About Us <span class="hr"></span></h1>
-                            <h4 class="pt">It is a long established facthat reader will be distracted bythe readable content page when looking at its layout. </h4>
+                        <?php global $redux_demo; ?>
+                            <h1><?php echo $redux_demo['about-text-id']; ?> <span class="hr"></span></h1>
+                            <h4 class="pt"><?php echo $redux_demo['about-text-area']; ?> </h4>
                         </div>
                     </div>
                     <div class="col-xl-6">
                       <div class="about-left-content">
-                          <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example which of us ever </p>
+                          <p><?php echo $redux_demo['about-text-area-description']; ?> </p>
                       </div>
                     </div>
                 </div>
                 <div class="row mt-60">
                     <div class="col-xl-4">
                         <div class="about-founder">
-                            <img src="images/icon/icon@1X.png" alt="">
+                            <img src="<?php echo $redux_demo['about-three-part-one']['url']; ?>" alt="">
                         </div>
                         <div class="content-about pt-20">
-                            <h3>Consulting <br>for any problems</h3>
-                            <p class="pt-20">Sed ut perspiciatis unde omnis  natus error sit voluptatem accusantium emque laudantium totam rem</p>
+                            <h3><?php echo $redux_demo['about-three-heading']; ?></h3>
+                            <p class="pt-20"><?php echo $redux_demo['about-three-desription']; ?></p>
                         </div>
                     </div>
                     <div class="col-xl-4">
-                        <div class="about-founder">
-                            <img src="images/icon/icon@1X(1).png" alt="">
+                    <div class="about-founder">
+                            <img src="<?php echo $redux_demo['about-three-part-two']['url']; ?>" alt="">
                         </div>
                         <div class="content-about pt-20">
-                            <h3>Finance<br>and Insurance</h3>
-                            <p class="pt-20">Sed ut perspiciatis unde omnis  natus error sit voluptatem accusantium emque laudantium totam rem</p>
+                            <h3><?php echo $redux_demo['about-three-heading-two']; ?></h3>
+                            <p class="pt-20"><?php echo $redux_demo['about-three-desription-two']; ?></p>
                         </div>
                     </div>
                     <div class="col-xl-4">
-                        <div class="about-founder">
-                            <img src="images/icon/icon@1X(2).png" alt="">
+                    <div class="about-founder">
+                            <img src="<?php echo $redux_demo['about-three-part-three']['url']; ?>" alt="">
                         </div>
                         <div class="content-about pt-20">
-                            <h3>Seo and<br>Digital Marketing</h3>
-                            <p class="pt-20">Sed ut perspiciatis unde omnis  natus error sit voluptatem accusantium emque laudantium totam rem</p>
+                            <h3><?php echo $redux_demo['about-three-heading-three']; ?></h3>
+                            <p class="pt-20"><?php echo $redux_demo['about-three-desription-three']; ?></p>
                         </div>
                     </div>
                 </div>
@@ -54,8 +55,8 @@
                 <div class="row">
                     <div class="col-xl-4">
                         <div class="about-main-contant">
-                            <h1>Services <span class="hr"></span></h1>
-                            <h5 class="pt">It is a long established facthat reader will be distracted bythe readable content page when looking at its layout. </h5>
+                            <h1><?php echo $redux_demo['about-service']; ?> <span class="hr"></span></h1>
+                            <h5 class="pt"><?php echo $redux_demo['services-text-area']; ?>  </h5>
                         </div>
                     </div>
                     <div class="col-xl-8">
@@ -63,35 +64,35 @@
                             <div class="col-xl-4">
                                 <div class="services-slider">
                                     <div class="services-image">
-                                        <img src="images/bg@1X.png" alt="">
+                                        <img src="<?php echo $redux_demo['services-media-one']['url']; ?>" alt="">
                                     </div>
                                     <div class="services-heading">
-                                        <h5 class="pt-20">Business Consulting</h5>
-                                        <p>It is a long established fact that a reader will beed by readable.</p>
+                                        <h5 class="pt-20"><?php echo $redux_demo['service-heading-one']; ?></h5>
+                                        <p><?php echo $redux_demo['service-description-one']; ?></p>
                                     </div>
                                 </div>
                         </div>
                         <div class="col-xl-4">
                                 <div class="services-slider">
                                     <div class="services-image">
-                                        <img src="images/bg@1X.png" alt="">
+                                        <img src="<?php echo $redux_demo['services-media-two']['url']; ?>" alt="">
                                     </div>
                                     <div class="services-heading">
-                                        <h5 class="pt-20">Business Consulting</h5>
-                                        <p>It is a long established fact that a reader will beed by readable.</p>
+                                        <h5 class="pt-20"><?php echo $redux_demo['service-heading-two']; ?></h5>
+                                        <p><?php echo $redux_demo['service-description-two']; ?></p>
                                     </div>
                                 </div>
                         </div>
                         <div class="col-xl-4">
-                                <div class="services-slider">
+                            <div class="services-slider">
                                     <div class="services-image">
-                                        <img src="images/bg@1X.png" alt="">
+                                        <img src="<?php echo $redux_demo['services-media-three']['url']; ?>" alt="">
                                     </div>
                                     <div class="services-heading">
-                                        <h5 class="pt-20">Business Consulting</h5>
-                                        <p>It is a long established fact that a reader will beed by readable.</p>
+                                        <h5 class="pt-20"><?php echo $redux_demo['service-heading-three']; ?></h5>
+                                        <p><?php echo $redux_demo['service-description-three']; ?></p>
                                     </div>
-                                </div>
+                             </div>
                         </div>
                     </div>
                 </div>
@@ -104,12 +105,12 @@
             <div class="row">
                 <div class="col-xl-12 text-center">
                     <div class="video-text pb-20">
-                        <h4>We Are Ready</h4>
-                        <h1>Come with us to <br>improve your business</h1>
+                        <h4><?php echo $redux_demo['video-service']; ?></h4>
+                        <h1><?php echo $redux_demo['video-services-text']; ?></h1>
                     </div>
                     <div class="video-button pt-20">
-                        <a href="#" class="action-btn">CONTACT US</a>
-                        <a href="#" class="transparent-action-btn"><span class="lnr lnr-camera-video"></span>Watch Your Video</a>
+                        <a href="<?php echo $redux_demo['video-services-text-one']; ?>" class="action-btn">CONTACT US</a>
+                        <a href="<?php echo $redux_demo['video-services-text-two']; ?>" class="transparent-action-btn"><span class="lnr lnr-camera-video"></span>Watch Your Video</a>
                     </div>
                 </div>
             </div>
@@ -121,46 +122,47 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="about-main-contant">
-                            <h1>Our Case <span class="hr"></span></h1>
-                            <h5 class="pt">Sed ut perspiciatis unde omiste naerror voluptate satium <br> doloreque laudan totam rem riam eaque ipsa quae ab illo invetore vtatise. </h5>
+                            <h1><?php echo $redux_demo['case-section']; ?> <span class="hr"></span></h1>
+                            <h5 class="pt"><?php echo $redux_demo['case-section-description']; ?> </h5>
                      </div>
                 </div>
                 <div class="row pt-20">
                     <div class="col-xl-3">
                         <div class="services-image">
-                            <img src="images/bg@1X.png" alt="">
+                       <img src=" <?php echo $redux_demo['case-mdia-one']['url']; ?>" alt="">
                         </div>
                             <div class="services-heading">
-                                <h5 class="pt-20">Business Consulting</h5>
-                             <a href="#">read more</a>
+                                <h5 class="pt-20"><?php echo $redux_demo['case-section-description-one']; ?></h5>
+                             <a href="<?php echo $redux_demo['case-section-link-one']; ?>">Read More...</a>
                         </div>
                     </div>
                     <div class="col-xl-3">
-                        <div class="services-image">
-                            <img src="images/bg@1X.png" alt="">
+                    <div class="services-image">
+                       <img src=" <?php echo $redux_demo['case-mdia-two']['url']; ?>" alt="">
                         </div>
                             <div class="services-heading">
-                                <h5 class="pt-20">Business Consulting</h5>
-                            <a href="#">read more</a>
+                                <h5 class="pt-20"><?php echo $redux_demo['case-section-description-two']; ?></h5>
+                             <a href="<?php echo $redux_demo['case-section-link-two']; ?>">Read More...</a>
                         </div>
                     </div>
                     <div class="col-xl-3">
-                        <div class="services-image">
-                            <img src="images/bg@1X.png" alt="">
+                    <div class="services-image">
+                       <img src=" <?php echo $redux_demo['case-mdia-three']['url']; ?>" alt="">
                         </div>
                             <div class="services-heading">
-                                <h5 class="pt-20">Business Consulting</h5>
-                            <a href="#">read more</a>
+                                <h5 class="pt-20"><?php echo $redux_demo['case-section-description-three']; ?></h5>
+                             <a href="<?php echo $redux_demo['case-section-link-three']; ?>">Read More...</a>
                         </div>
                     </div>
                     <div class="col-xl-3">
-                        <div class="services-image">
-                            <img src="images/bg@1X.png" alt="">
+                    <div class="services-image">
+                       <img src=" <?php echo $redux_demo['case-mdia-four']['url']; ?>" alt="">
                         </div>
                             <div class="services-heading">
-                                <h5 class="pt-20">Business Consulting</h5>
-                            <a href="#">read more</a>
+                                <h5 class="pt-20"><?php echo $redux_demo['case-section-description-three']; ?></h5>
+                             <a href="<?php echo $redux_demo['case-section-link-three']; ?>">Read More...</a>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -173,31 +175,22 @@
             <div class="row">
                 <div class="col-xl-6">
                     <div class="testimonai-slider-content">
+                        <?php 
+                        $testmonial = new WP_Query(array(
+                          'post_type' => 'tesimonial',
+                          'posts_per_page' => 3
+                        ));
+                        while( $testmonial -> have_posts()):  $testmonial ->the_post();
+                        ?>
                         <div class="quate">
-                            <h3>At vero eos et accusamus et iusto odio dignissimos ducimus ditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas </h3>
+                            <h3><?php the_title(); ?></h3>
                             <div class="calind-image">
-                                <img src="images/bg@1X.png" alt="">
-                                <p class="desination1">Marcelino S. Shelton</p>
-                                <p class="desination">CEO & Founder</p>
+                                <?php the_post_thumbnail('thumbnail',array('class' => 'calind-image')); ?>
+                                <p class="desination1"><?php the_content(); ?></p>
+                                <p class="desination"><?php echo get_post_meta(get_the_ID(), 'xman_testimonial_field', true); ?></p>
                             </div>
                         </div>
-                        <div class="quate">
-                            <h3>At vero eos et accusamus et iusto odio dignissimos ducimus ditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas </h3>
-                            <div class="calind-image">
-                                <img src="images/bg@1X.png" alt="">
-                                <p class="desination1">Marcelino S. Shelton</p>
-                                <p class="desination">CEO & Founder</p>
-                            </div>
-                        </div>
-                        <div class="quate">
-                            <h3>At vero eos et accusamus et iusto odio dignissimos ducimus ditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas </h3>
-                            <div class="calind-image">
-                                <img src="images/bg@1X.png" alt="">
-                                <p class="desination1">Marcelino S. Shelton</p>
-                                <p class="desination">CEO & Founder</p>
-                            </div>
-                        </div>
-
+                    <?php endwhile; ?>
                     </div>
                 </div>
                 <div class="col-xl-6">

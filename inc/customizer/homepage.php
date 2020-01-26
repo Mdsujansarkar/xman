@@ -126,10 +126,37 @@ Kirki::add_field( HEADER_OPTION_CUSTOMIZER_PANALE_ID, [
 Kirki::add_field( HEADER_OPTION_CUSTOMIZER_PANALE_ID, [
 	'type'     => 'editor',
 	'settings' => 'main_text_heading',
-	'label'    => esc_html__( 'Slide Number', 'kirki' ),
+	'label'    => esc_html__( 'Write Somothing', 'kirki' ),
 	'section'  => 'slider_sections',
-	'default'  => 1,
 	'priority' => 10,
 ] );
-
+Kirki::add_field( HEADER_OPTION_CUSTOMIZER_PANALE_ID, [
+	'type'        => 'image',
+	'settings'    => 'background_image_url',
+	'label'       => esc_html__( 'Image Control (URL)', 'kirki' ),
+	'description' => esc_html__( 'Description Here.', 'kirki' ),
+	'section'     => 'slider_sections',
+	'default'     => 'images/test-image.jpg',
+] );
+Kirki::add_field( HEADER_OPTION_CUSTOMIZER_PANALE_ID, [
+	'type'        => 'textarea',
+	'settings'    => 'slider_descriptionl',
+	'label'       => esc_html__( 'Text Area', 'kirki' ),
+	'description' => esc_html__( 'Description Here.', 'kirki' ),
+	'section'     => 'slider_sections',
+] );
+Kirki::add_field( HEADER_OPTION_CUSTOMIZER_PANALE_ID, [
+	'type'        => 'link',
+	'settings'    => 'slider_link',
+	'label'       => esc_html__( 'Text Area', 'kirki' ),
+	'description' => esc_html__( 'Description Here.', 'kirki' ),
+	'section'     => 'slider_sections',
+] );
+Kirki::add_field( HEADER_OPTION_CUSTOMIZER_PANALE_ID, [
+	'type'        => 'text',
+	'settings'    => 'slider_link_text',
+	'label'       => esc_html__( 'Button Text', 'kirki' ),
+	'description' => esc_html__( 'Description Here.', 'kirki' ),
+	'section'     => 'slider_sections',
+] );
 }

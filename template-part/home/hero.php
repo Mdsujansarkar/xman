@@ -1,14 +1,15 @@
 <div class="slider-area">
-  <?php for($i = 1; $i <= get_theme_mod('slide_number',1); $i++): ?>
+  <?php for($i= 1; $i <= get_theme_mod('slide_number',1); $i++): ?>
         <div class="singal-slide">
-             <div class="slider-image slider-height d-flex align-items-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/test-image.jpg');">
+          <?php   $background_image =  get_theme_mod('background_image_url',''); ?>
+             <div class="slider-image slider-height d-flex align-items-center" style="background-image: url('<?php echo esc_url($background_image); ?>');">
               <div class="container">
                   <div class="row">
                       <div class="col-xl-12">
                          <div class="slider-content animated bounce delay-25">
-                          <h2>Meet with us to<br>success dream <span>business</span></h2>
-                          <p>There are many variations of passages of Lorem Ipsum available but the majority have sufered alteration in some form by injected humour randomised </p>
-                          <a href="#" class="action-btn">GET START</a>
+                          <h2><?php echo get_theme_mod('main_text_heading','Write Something'); ?></h2>
+                          <p><?php echo get_theme_mod('slider_descriptionl','Write Something'); ?> </p>
+                          <a href="<?php echo esc_url('slider_link'); ?>" class="action-btn"><?php echo esc_attr(get_theme_mod('slider_link_text','GET START')); ?></a>
                         </div>
                       </div>
                   </div>

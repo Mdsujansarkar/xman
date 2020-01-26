@@ -154,8 +154,64 @@ function xman_scripts() {
 	
 }
 add_action( 'wp_enqueue_scripts', 'xman_scripts' );
+// Custom post type
+// Register Custom Post Type tesimonial
+function create_tesimonial_cpt() {
 
+	$labels = array(
+		'name' => _x( 'tesimonials', 'Post Type General Name', 'xman' ),
+		'singular_name'				 => _x( 'tesimonial', 'Post Type Singular Name', 'xman' ),
+		'menu_name' 				 => _x( 'tesimonials', 'Admin Menu text', 'xman' ),
+		'name_admin_bar'			 => _x( 'tesimonial', 'Add New on Toolbar', 'xman' ),
+		'archives'					 => __( 'tesimonial Archives', 'xman' ),
+		'attributes' 				 => __( 'tesimonial Attributes', 'xman' ),
+		'parent_item_colon' 		 => __( 'Parent tesimonial:', 'xman' ),
+		'all_items' 				 => __( 'All tesimonials', 'xman' ),
+		'add_new_item' 				 => __( 'Add New tesimonial', 'xman' ),
+		'add_new' 					 => __( 'Add New', 'xman' ),
+		'new_item' 					 => __( 'New tesimonial', 'xman' ),
+		'edit_item' 				 => __( 'Edit tesimonial', 'xman' ),
+		'update_item' 				 => __( 'Update tesimonial', 'xman' ),
+		'view_item' 				 => __( 'View tesimonial', 'xman' ),
+		'view_items' 				 => __( 'View tesimonials', 'xman' ),
+		'search_items' 				 => __( 'Search tesimonial', 'xman' ),
+		'not_found' 				 => __( 'Not found', 'xman' ),
+		'not_found_in_trash' 		 => __( 'Not found in Trash', 'xman' ),
+		'featured_image' 			 => __( 'Featured Image', 'xman' ),
+		'set_featured_image' 		 => __( 'Set featured image', 'xman' ),
+		'remove_featured_image' 	 => __( 'Remove featured image', 'xman' ),
+		'use_featured_image' 		 => __( 'Use as featured image', 'xman' ),
+		'insert_into_item' 			 => __( 'Insert into tesimonial', 'xman' ),
+		'uploaded_to_this_item'		 => __( 'Uploaded to this tesimonial', 'xman' ),
+		'items_list' 				 => __( 'tesimonials list', 'xman' ),
+		'items_list_navigation' 	 => __( 'tesimonials list navigation', 'xman' ),
+		'filter_items_list' 		 => __( 'Filter tesimonials list', 'xman' ),
+	);
+	$args = array(
+		'label' 					 => __( 'tesimonial', 'xman' ),
+		'description' 				 => __( 'Testimonial', 'xman' ),
+		'labels' 					 => $labels,
+		'menu_icon'					 => '',
+		'supports' 					 => array('title', 'editor', 'thumbnail', 'custom-fields'),
+		'taxonomies'				 => array(),
+		'public' 					 => true,
+		'show_ui' 					 => true,
+		'show_in_menu' 				 => true,
+		'menu_position' 			 => 5,
+		'show_in_admin_bar' 		 => true,
+		'show_in_nav_menus' 		 => true,
+		'can_export' 				 => true,
+		'has_archive' 				 => true,
+		'hierarchical' 				 => false,
+		'exclude_from_search' 		 => false,
+		'show_in_rest' 				 => true,
+		'publicly_queryable' 		 => true,
+		'capability_type' 			 => 'post',
+	);
+	register_post_type( 'tesimonial', $args );
 
+}
+add_action( 'init', 'create_tesimonial_cpt', 0 );
 
 /**
  * Load Jetpack compatibility file.
@@ -163,4 +219,6 @@ add_action( 'wp_enqueue_scripts', 'xman_scripts' );
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
+require get_template_directory() . '/inc/redux/ReduxCore/framework.php';
+require get_template_directory() . '/inc/redux/sample/config.php';
+require get_template_directory() . '/CMB2/functions.php';
