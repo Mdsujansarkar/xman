@@ -621,9 +621,7 @@ select.form-control:not([size]):not([multiple]){
   color: #b9bbc5;
   font-family: ﻿OpenSans-Regular;
 }
-.link-pages ul li:hover a{
 
-}
 address p{
  color:#ffffff;
  font-size:14px;
@@ -633,3 +631,16 @@ address ul li h6{
   font-size: 18px;
   font-weight: 700;
 }
+.widgettitle,.pt{
+  color: #FFFFFF;
+}
+.blog-main {
+  margin-top: 140px;
+  margin-bottom: 140px;
+  -webkit-box-shadow: -47px -55px 164px -113px rgba(0,0,0,1);
+-moz-box-shadow: -47px -55px 164px -113px rgba(0,0,0,1);
+box-shadow: -47px -55px 164px -113px rgba(0,0,0,1);
+}
+.blog-post {
+    padding: 50px;
+   }

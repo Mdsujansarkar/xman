@@ -1,6 +1,4 @@
-<?php get_header(); ?>
-    <main>
-    <div class="our-blog pt-100 pb-60">
+<div class="our-blog pt-100 pb-60">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -10,28 +8,24 @@
                      </div>
                 </div>
                 <div class="row pt-40">
-                    <?php
+                <?php
                         if ( have_posts() ): 
                             while( have_posts() ) : the_post();
-                    ?>
+                 ?>
                     <div class="col-xl-6 blog-images">
                         <div class="blog-image">
-                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail',array( 'width' => 100, 'height' => 100 )); ?></a>
+                            <a href="#"><img src="images/bg@1X.png" alt=""></a>
                         </div>
                         <div class="reading-part">
-                           <a href="<?php the_permalink(); ?>"><h5><?php the_title(); ?></h5></a>
-                            <p><?php the_excerpt(); ?></p>
+                            <h5>Webfonts Performance Smashing Videos</h5>
                             <p>By Admin</p>
                             <p class="command">commands(5)</p>
-                            <p class="readmore"><a href="<?php the_permalink(); ?>">readmore</a></p>
+                            <p class="readmore"><a href="#">readmore</a></p>
                         </div>
                     </div>
-                        <?php endwhile; ?>
+                    <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
             </div>
         </div>
     </div>
-    </main>
- <?php get_footer(); ?>
- 

@@ -108,32 +108,15 @@ function xman_content_width() {
 }
 add_action( 'after_setup_theme', 'xman_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function xman_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'xman' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'xman' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'xman_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */ 
 function xman_scripts() {
-    wp_enqueue_style('xman-slick-css','//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
-    wp_enqueue_style('xman-bootstrap-css','//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
-    wp_enqueue_style('xman-linearicons-css','//cdn.linearicons.com/free/1.0.0/icon-font.min.css');
-    wp_enqueue_style('xman-animated-css', get_template_directory_uri() .'/animated.css');
+    wp_enqueue_style( 'xman-slick-css',		'//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
+    wp_enqueue_style( 'xman-bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+    wp_enqueue_style( 'xman-linearicons-css','//cdn.linearicons.com/free/1.0.0/icon-font.min.css');
+    wp_enqueue_style( 'xman-animated-css', get_template_directory_uri() .'/animated.css');
 	wp_enqueue_style( 'xman-style', get_stylesheet_uri() );
    
     wp_enqueue_script( 'xman-popper-js', '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array('jquery'), '20151215', true );
@@ -213,6 +196,7 @@ function create_tesimonial_cpt() {
 }
 add_action( 'init', 'create_tesimonial_cpt', 0 );
 
+
 /**
  * Load Jetpack compatibility file.
  */
@@ -222,3 +206,74 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 require get_template_directory() . '/inc/redux/ReduxCore/framework.php';
 require get_template_directory() . '/inc/redux/sample/config.php';
 require get_template_directory() . '/CMB2/functions.php';
+require get_template_directory() . '/inc/sidebar/sidebar.php';
+ 
+class My_Widget extends WP_Widget {
+ 
+    function __construct() {
+ 
+        parent::__construct(
+            'my-text',  // Base ID
+            'My Text'   // Name
+        );
+ 
+        add_action( 'widgets_init', function() {
+            register_widget( 'My_Widget' );
+        });
+ 
+    }
+ 
+    public $args = array(
+        'before_title'  => '<h4 class="widgettitle">',
+        'after_title'   => '</h4>',
+        'before_widget' => '<div class="widget-wrap">',
+        'after_widget'  => '</div></div>'
+    );
+ 
+    public function widget( $args, $instance ) {
+ 
+        echo $args['before_widget'];
+ 
+        if ( ! empty( $instance['title'] ) ) {
+            echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+        }
+ 
+        echo '<div class="textwidget">';
+ 
+        echo esc_html__( $instance['text'], 'text_domain' );
+ 
+        echo '</div>';
+ 
+        echo $args['after_widget'];
+ 
+    }
+ 
+    public function form( $instance ) {
+ 
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( '', 'text_domain' );
+        $text = ! empty( $instance['text'] ) ? $instance['text'] : esc_html__( '', 'text_domain' );
+        ?>
+        <p>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html__( 'Title:', 'text_domain' ); ?></label>
+            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+        </p>
+        <p>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'Text' ) ); ?>"><?php echo esc_html__( 'Text:', 'text_domain' ); ?></label>
+            <textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'text' ) ); ?>" type="text" cols="30" rows="10"><?php echo esc_attr( $text ); ?></textarea>
+        </p>
+        <?php
+ 
+    }
+ 
+    public function update( $new_instance, $old_instance ) {
+ 
+        $instance = array();
+ 
+        $instance['title'] = ( !empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['text'] = ( !empty( $new_instance['text'] ) ) ? $new_instance['text'] : '';
+ 
+        return $instance;
+    }
+ 
+}
+$my_widget = new My_Widget();

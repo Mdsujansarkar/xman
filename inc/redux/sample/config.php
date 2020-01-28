@@ -624,5 +624,60 @@
             ),
         )
     ) );
+
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Our accordion', 'xman' ),
+        'id'               => 'home_accordion_section',
+        'subsection'       => true,
+        'customizer_width' => '450px',
+        'desc'             => __( 'For full documentation on this field, visit: ', 'xman' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
+        'fields'           => array(
+            array(
+                'id'       => 'accordion-section-image',
+                'type'     => 'media',
+                'title'    => __( 'Image', 'xman' ),
+                'desc'     => __( 'Case Heading Section', 'xman' ),
+                'default'  => array(
+                    'url'      =>get_template_directory_uri(). '/images/here@1X.png'
+                    )
+            ),
+            array(
+                'id'       => 'accordion-heading-one',
+                'type'     => 'text',
+                'title'    => __( 'Accordion One', 'xman' ),
+                'default'  => 'Accordion One'
+            ),
+            array(
+                'id'       => 'accordion-textarea-one',
+                'type'     => 'textarea',
+                'title'    => __( 'Accordion One', 'xman' ),
+                'default'  => 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it '
+            ),
+            array(
+                'id'       => 'accordion-heading-two',
+                'type'     => 'text',
+                'title'    => __( 'Accordion One', 'xman' ),
+                'default'  => 'Accordion One'
+            ),
+            array(
+                'id'       => 'accordion-textarea-two',
+                'type'     => 'textarea',
+                'title'    => __( 'Accordion One', 'xman' ),
+                'default'  => 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it '
+            ),
+            array(
+                'id'       => 'accordion-heading-three',
+                'type'     => 'text',
+                'title'    => __( 'Accordion One', 'xman' ),
+                'default'  => 'Accordion One'
+            ),
+            array(
+                'id'       => 'accordion-textarea-three',
+                'type'     => 'textarea',
+                'title'    => __( 'Accordion One', 'xman' ),
+                'default'  => 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it '
+            ),
+        )
+    ) );
    
 
